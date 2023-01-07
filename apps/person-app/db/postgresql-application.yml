@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: person-app-db
+  namespace: argocd
+spec:
+  project: demo
+  source:
+    chart: postgresql
+    repoURL: https://github.com/bitnami/charts
+    targetRevision: 12.1.7
+    helm:
+      releaseName: postgresql
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: demo
