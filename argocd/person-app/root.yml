@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: person-app-root
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
+  project: demo
+  source:
+    repoURL: git@github.com:dmfrey/demo-parent-gitops.git
+    targetRevision: HEAD
+    path: argocd/person-app/apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd

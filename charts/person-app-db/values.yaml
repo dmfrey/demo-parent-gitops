@@ -1,0 +1,11 @@
+
+dbnameOverride: ""
+
+spec:
+  memory: 400Mi
+  cpu: 400m
+  storageSize: 1G
+  pgConfig:
+    dbname: person_app_db
+    username: person_app_db_admin
+    appUser: person_app_db_user
