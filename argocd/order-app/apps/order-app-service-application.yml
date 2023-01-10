@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: order-app-db
+  name: order-app
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   syncPolicy:
     automated:
@@ -16,7 +16,7 @@ spec:
   source:
     repoURL: git@github.com:dmfrey/demo-parent-gitops.git
     targetRevision: HEAD
-    path: charts/order-app-db
+    path: charts/order-app
     helm:
       ignoreMissingValueFiles: true
       valueFiles:

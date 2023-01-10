@@ -1,0 +1,15 @@
+---
+apiVersion: servicebinding.io/v1beta1
+kind: ServiceBinding
+metadata:
+  name: order-app-db
+spec:
+  # direct Secret reference is used for compatibility, but not recommended for dynamically provisioned services
+  service:
+    apiVersion: v1
+    kind: Secret
+    name: order-app-db-app-user-db-secret
+  workload:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "spring-boot-app.fullname" . }}

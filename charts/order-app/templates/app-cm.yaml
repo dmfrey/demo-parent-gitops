@@ -1,0 +1,8 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ include "spring-boot-app.name" . }}
+data:
+  application.yaml: |-
+    {{- toYaml .Values.application | nindent 4 }}
