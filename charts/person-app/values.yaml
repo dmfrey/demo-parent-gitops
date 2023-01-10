@@ -8,7 +8,7 @@ image:
   repository: dfrey501/person-app
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 0.0.1-SNAPSHOT-9150d68
+  tag: 0.0.1-SNAPSHOT-5921da7
 
 imagePullSecrets: []
 nameOverride: ""
@@ -36,7 +36,7 @@ serviceAccount:
       - list
       - watch
   roleBinding:
-    name: "dfrey-dev-namespace-reader-binding"
+    name: "demo-namespace-reader-binding"
 
 podAnnotations:
   prometheus.io/path: "/actuator/prometheus"
@@ -123,9 +123,5 @@ application:
   spring:
     datasource:
       url: jdbc:postgresql://person-app-db:5432/person-app-db?ssl=true&sslmode=require
-    zipkin:
-      enabled: true
-      service.name: person-app
-      base-url: http://observability-grafana-tempo-distributor.observability.svc.cluster.local:9411
   webservice:
-    order-resource-url: http://order-app-develop
+    order-resource-url: http://order-app
