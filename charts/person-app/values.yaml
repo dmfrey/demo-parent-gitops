@@ -14,6 +14,10 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+envFrom:
+  - secretRef:
+      name: launch-postgres-db-app-user-db-secret
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -120,8 +124,5 @@ springboot:
       periodSeconds: 5
 
 application:
-  spring:
-    datasource:
-      url: jdbc:postgresql://person-app-db:5432/person-app-db?ssl=true&sslmode=require
   webservice:
     order-resource-url: http://order-app

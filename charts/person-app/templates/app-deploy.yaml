@@ -40,19 +40,6 @@ spec:
             {{- toYaml .Values.springboot.health.livenessProbe | nindent 12 }}
           readinessProbe:
             {{- toYaml .Values.springboot.health.readinessProbe | nindent 12 }}
-          env:
-            - name: SPRING_PROFILES_ACTIVE
-              value: "kubernetes"
-            - name: SPRING_DATASOURCE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: person-app-db-app-user-db-secret
-                  key: username
-            - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: person-app-db-app-user-db-secret
-                  key: password
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
