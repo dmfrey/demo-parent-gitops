@@ -14,10 +14,6 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-envFrom:
-  - secretRef:
-      name: person-app-db-read-write-user-db-secret
-
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
