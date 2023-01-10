@@ -42,6 +42,7 @@ spec:
             {{- toYaml .Values.springboot.health.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.envFrom }}
           envFrom:
             {{- toYaml .Values.envFrom | nindent 12 }}
           {{- end }}
