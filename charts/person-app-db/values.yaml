@@ -10,4 +10,6 @@ spec:
     username: person_app_db_admin
     appUser: person_app_db_user
   storageClassName: nfs-csi
-  
+  status:
+    binding:
+      name: person-app-db-read-write-user-db-secret
