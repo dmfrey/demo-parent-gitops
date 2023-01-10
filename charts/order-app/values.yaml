@@ -36,7 +36,7 @@ serviceAccount:
       - list
       - watch
   roleBinding:
-    name: "demo-namespace-reader-binding"
+    name: "order-app-demo-namespace-reader-binding"
 
 podAnnotations:
   prometheus.io/path: "/actuator/prometheus"
@@ -118,7 +118,3 @@ springboot:
         port: http
       initialDelaySeconds: 20
       periodSeconds: 5
-
-application:
-  webservice:
-    order-resource-url: http://order-app
