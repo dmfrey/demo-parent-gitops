@@ -16,7 +16,7 @@ fullnameOverride: ""
 
 envFrom:
   - secretRef:
-      name: launch-postgres-db-app-user-db-secret
+      name: person-app-db-read-write-user-db-secret
 
 serviceAccount:
   # Specifies whether a service account should be created
