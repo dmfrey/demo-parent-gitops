@@ -38,7 +38,7 @@ spec:
             {{- toYaml .Values.springboot.ports | nindent 12 }}
           volumeMounts:
             - name: config
-              mountPath: /config
+              mountPath: config/
               readOnly: true
           livenessProbe:
             {{- toYaml .Values.springboot.health.livenessProbe | nindent 12 }}
