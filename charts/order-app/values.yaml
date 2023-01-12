@@ -124,5 +124,5 @@ application:
     tracing:
       enabled: true
       sampling:
-        probability: 0.8
+        probability: 0.4
     zipkin.tracing.endpoint: http://tempo.observability:9411
