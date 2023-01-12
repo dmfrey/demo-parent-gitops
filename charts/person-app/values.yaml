@@ -116,7 +116,7 @@ springboot:
       httpGet:
         path: /actuator/health/readiness
         port: http
-      initialDelaySeconds: 20
+      initialDelaySeconds: 60
       periodSeconds: 5
 
 application:
