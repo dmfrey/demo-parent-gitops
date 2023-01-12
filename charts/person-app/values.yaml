@@ -124,7 +124,7 @@ application:
     tracing:
       enabled: true
       sampling:
-        probability: 0.1
+        probability: 0.8
     zipkin.tracing.endpoint: http://tempo.observability:9411
   webservice:
     order-resource-url: http://order-app
