@@ -120,5 +120,9 @@ springboot:
       periodSeconds: 5
 
 application:
+  management: 
+    tracing:
+      enabled: true
+    zipkin.tracing.endpoint: http://tempo.observability:9411
   webservice:
     order-resource-url: http://order-app

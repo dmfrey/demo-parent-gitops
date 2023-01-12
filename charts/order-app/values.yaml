@@ -118,3 +118,9 @@ springboot:
         port: http
       initialDelaySeconds: 20
       periodSeconds: 5
+
+application:
+  management: 
+    tracing:
+      enabled: true
+    zipkin.tracing.endpoint: http://tempo.observability:9411

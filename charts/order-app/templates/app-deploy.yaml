@@ -36,12 +36,23 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             {{- toYaml .Values.springboot.ports | nindent 12 }}
+          volumeMounts:
+            - name: config
+              mountPath: /workspace/config
+              readOnly: true
           livenessProbe:
             {{- toYaml .Values.springboot.health.livenessProbe | nindent 12 }}
           readinessProbe:
             {{- toYaml .Values.springboot.health.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: config
+        configMap:
+          name: {{ include "spring-boot-app.name" . }}
+          items:
+          - key: "application.yaml"
+            path: "application.yaml"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
