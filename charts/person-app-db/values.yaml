@@ -9,4 +9,3 @@ spec:
     dbname: person_app_db
     username: person_app_db_admin
     appUser: person_app_db_user
-  storageClassName: 

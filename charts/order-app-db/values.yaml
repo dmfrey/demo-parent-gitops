@@ -9,4 +9,3 @@ spec:
     dbname: order_app_db
     username: order_app_db_admin
     appUser: order_app_db_user
-  storageClassName: 
