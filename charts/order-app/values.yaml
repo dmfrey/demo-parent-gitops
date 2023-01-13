@@ -120,6 +120,7 @@ springboot:
       periodSeconds: 5
 
 application:
+  server.port: 8080
   management: 
     tracing:
       enabled: true
