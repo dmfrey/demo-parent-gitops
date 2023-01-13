@@ -8,7 +8,7 @@ image:
   repository: dfrey501/order-app
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 0.0.1-SNAPSHOT-071057f
+  tag: 0.0.1-SNAPSHOT-7e9b1f8
 
 imagePullSecrets: []
 nameOverride: ""
