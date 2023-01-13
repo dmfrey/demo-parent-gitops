@@ -122,8 +122,4 @@ springboot:
 application:
   server.port: 8080
   management: 
-    tracing:
-      enabled: true
-      sampling:
-        probability: 0.1
     zipkin.tracing.endpoint: http://tempo.observability:9411
