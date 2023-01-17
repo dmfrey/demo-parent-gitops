@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: person-app
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+  project: dev
+  source:
+    repoURL: git@github.com:dmfrey/demo-parent-gitops.git
+    targetRevision: HEAD
+    path: charts/person-app
+    helm:
+      ignoreMissingValueFiles: true
+      valueFiles:
+        - values.yaml
+      values: |
+        application:
+          webservice:
+            order-resource-url: http://order-app-dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
