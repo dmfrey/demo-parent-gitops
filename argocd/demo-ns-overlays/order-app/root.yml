@@ -1,0 +1,11 @@
+
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
+  project: demo
+  source:
+    path: argocd/demo-ns-overlays/order-app/apps

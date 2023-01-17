@@ -1,0 +1,11 @@
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
+  project: demo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo

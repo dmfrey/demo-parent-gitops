@@ -6,13 +6,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
 spec:
-  syncPolicy:
-    automated:
-      prune: true
-    syncOptions:
-      - ApplyOutOfSyncOnly=true
-      - CreateNamespace=true
-  project: demo
   source:
     repoURL: git@github.com:dmfrey/demo-parent-gitops.git
     targetRevision: HEAD
@@ -21,6 +14,3 @@ spec:
       ignoreMissingValueFiles: true
       valueFiles:
         - values.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: demo
