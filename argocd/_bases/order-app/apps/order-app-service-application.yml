@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: order-app
+  namespace: argocd
+spec:
+  source:
+    repoURL: git@github.com:dmfrey/demo-parent-gitops.git
+    targetRevision: HEAD
+    path: charts/order-app
+    helm:
+      ignoreMissingValueFiles: true
+      valueFiles:
+        - values.yaml

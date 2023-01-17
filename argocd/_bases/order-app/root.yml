@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: order-app-root
+  namespace: argocd
+spec:
+  source:
+    repoURL: git@github.com:dmfrey/demo-parent-gitops.git
+    targetRevision: HEAD
+    path: argocd/_bases/order-app/apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
