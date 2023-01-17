@@ -12,7 +12,3 @@ spec:
       ignoreMissingValueFiles: true
       valueFiles:
         - values.yaml
-      values: |
-        application:
-          webservice:
-            order-resource-url: http://order-app-demo
