@@ -10,5 +10,4 @@ commonLabels:
 nameSuffix: '-dev'
 
 patchesStrategicMerge:
-  - order-app-db-application.yml
   - order-app-service-application.yml
