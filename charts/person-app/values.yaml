@@ -8,7 +8,7 @@ image:
   repository: dfrey501/person-app
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 0.0.1-SNAPSHOT-ee58972
+  tag: 0.0.1-SNAPSHOT-c634f7e
 
 imagePullSecrets: []
 nameOverride: ""
