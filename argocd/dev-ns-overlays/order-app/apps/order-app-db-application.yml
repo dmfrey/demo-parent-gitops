@@ -20,6 +20,12 @@ spec:
       ignoreMissingValueFiles: true
       valueFiles:
         - values.yaml
+      values: |
+        spec:
+          pgConfig:
+            dbname: order_app_dev_db
+            username: order_app_dev_db_admin
+            appUser: order_app_dev_db_user
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
