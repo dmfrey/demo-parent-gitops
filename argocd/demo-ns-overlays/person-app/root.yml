@@ -13,7 +13,7 @@ spec:
   project: demo
   source:
     repoURL: git@github.com:dmfrey/demo-parent-gitops.git
-    targetRevision: kustomize-order-app
+    targetRevision: HEAD
     path: argocd/demo-ns-overlays/person-app/apps
   destination:
     server: https://kubernetes.default.svc
