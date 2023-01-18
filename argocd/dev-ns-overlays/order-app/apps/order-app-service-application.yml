@@ -18,6 +18,13 @@ spec:
       ignoreMissingValueFiles: true
       valueFiles:
         - values.yaml
+      values: |
+        serviceAccount:
+          name: order-app-dev-sa
+          clusterRole:
+            name: "order-app-dev-cluster-role-namespace-reader"
+          roleBinding:
+            name: "order-app-dev-namespace-reader-binding"
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

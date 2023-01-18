@@ -36,7 +36,7 @@ serviceAccount:
       - list
       - watch
   roleBinding:
-    name: "order-app-demo-namespace-reader-binding"
+    name: "order-app-namespace-reader-binding"
 
 podAnnotations:
   prometheus.io/path: "/actuator/prometheus"
