@@ -2,10 +2,4 @@
 dbnameOverride: ""
 
 spec:
-  memory: 400Mi
-  cpu: 400m
   storageSize: 1G
-  pgConfig:
-    dbname: order_app_db
-    username: order_app_db_admin
-    appUser: order_app_db_user

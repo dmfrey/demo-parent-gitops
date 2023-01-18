@@ -9,6 +9,7 @@ spec:
   syncPolicy:
     automated:
       prune: true
+      selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
       - CreateNamespace=true
@@ -21,6 +22,8 @@ spec:
       ignoreMissingValueFiles: true
       valueFiles:
         - values.yaml
+      values: |
+        dbnameOverride: order-app-db-demo
   destination:
     server: https://kubernetes.default.svc
     namespace: demo

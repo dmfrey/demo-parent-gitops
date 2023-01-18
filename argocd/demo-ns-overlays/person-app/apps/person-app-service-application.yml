@@ -3,10 +3,13 @@ kind: Application
 metadata:
   name: person-app
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   syncPolicy:
     automated:
       prune: true
+      selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
       - CreateNamespace=true

@@ -7,8 +7,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"
 spec:
   syncPolicy:
-    automated:
-      prune: true
     syncOptions:
       - CreateNamespace=true
   project: dev
@@ -20,6 +18,8 @@ spec:
       ignoreMissingValueFiles: true
       valueFiles:
         - values.yaml
+      values: |
+        dbnameOverride: person-app-db-dev
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
