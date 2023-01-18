@@ -124,3 +124,7 @@ application:
     zipkin.tracing.endpoint: http://tempo.observability:9411
   webservice:
     order-resource-url: http://order-app
+
+serviceBinding:
+  postgres:
+    secretName: "person-app-db-app-user-db-secret"

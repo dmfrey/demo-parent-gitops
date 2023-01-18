@@ -8,7 +8,7 @@ spec:
   service:
     apiVersion: v1
     kind: Secret
-    name: {{ include "spring-boot-app.postgresServiceBindingName" . }}
+    name: {{ .Values.serviceBinding.postgres.secretName }}
   workload:
     apiVersion: apps/v1
     kind: Deployment

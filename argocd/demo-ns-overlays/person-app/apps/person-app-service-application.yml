@@ -26,6 +26,9 @@ spec:
         application:
           webservice:
             order-resource-url: http://order-app-demo
+        serviceBinding:
+          postgres:
+            secretName: person-app-db-demo-app-user-db-secret
   destination:
     server: https://kubernetes.default.svc
     namespace: demo

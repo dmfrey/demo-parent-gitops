@@ -29,6 +29,9 @@ spec:
             name: "order-app-demo-cluster-role-namespace-reader"
           roleBinding:
             name: "order-app-demo-namespace-reader-binding"
+        serviceBinding:
+          postgres:
+            secretName: order-app-db-demo-app-user-db-secret
   destination:
     server: https://kubernetes.default.svc
     namespace: demo

@@ -123,3 +123,7 @@ application:
   server.port: 8080
   management: 
     zipkin.tracing.endpoint: http://tempo.observability:9411
+
+serviceBinding:
+  postgres:
+    secretName: "order-app-db-app-user-db-secret"
