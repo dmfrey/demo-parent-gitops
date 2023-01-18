@@ -65,5 +65,5 @@ Create the name of the service account to use
 Create the name of the postgres service binding secret to use
 */}}
 {{- define "spring-boot-app.postgresServiceBindingName" -}}
-{{- printf "%s-%s" (include "spring-boot-app.fullname" .) "app-user-db-secret" }}
+{{- default (include "spring-boot-app.fullname" .) "-app-user-db-secret" }}
 {{- end }}
