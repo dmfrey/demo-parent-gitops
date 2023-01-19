@@ -121,6 +121,9 @@ springboot:
 
 application:
   server.port: 8080
+  logging.level:
+    org.springframework.data: INFO
+    org.springframework.web: INFO
   management: 
     zipkin.tracing.endpoint: http://tempo.observability:9411
 
