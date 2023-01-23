@@ -4,6 +4,8 @@
 
 replicaCount: 1
 
+part-of: demo-parent
+
 image:
   repository: dfrey501/person-app
   pullPolicy: Always
