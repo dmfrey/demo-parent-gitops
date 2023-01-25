@@ -1,0 +1,14 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+
+metadata:
+  name: {{ .Values.serviceAccount.clusterRole.name }}
+
+rules:
+  - apiGroups:
+      {{- toYaml .Values.serviceAccount.clusterRole.apiGroups | nindent 6 }}
+    resources:
+      {{- toYaml .Values.serviceAccount.clusterRole.resources | nindent 6 }}
+    verbs:
+      {{- toYaml .Values.serviceAccount.clusterRole.verbs | nindent 6 }}
