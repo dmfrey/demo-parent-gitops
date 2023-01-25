@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../../_bases/schema-registry/apps/
+
+commonLabels:
+  namespace: demo
+
+nameSuffix: '-demo'
+
+patchesStrategicMerge:
+  - schema-registry-db-application.yml
+  - schema-registry-service-application.yml

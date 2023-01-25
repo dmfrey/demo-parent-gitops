@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: schema-registry-db
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
+  project: demo
+  source:
+    repoURL: git@github.com:dmfrey/demo-parent-gitops.git
+    targetRevision: HEAD
+    path: charts/schema-registry-db
+    helm:
+      ignoreMissingValueFiles: true
+      valueFiles:
+        - values.yaml
+      values: |
+        dbnameOverride: schema-registry-db-demo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo

@@ -1,0 +1,7 @@
+
+dbnameOverride: ""
+
+spec:
+  memory: 400Mi
+  cpu: "0.4"
+  storageSize: 1G

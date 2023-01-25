@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: schema-registry
+  namespace: argocd
+spec:
+  source:
+    repoURL: git@github.com:dmfrey/demo-parent-gitops.git
+    targetRevision: HEAD
+    path: charts/schema-registry
+    helm:
+      ignoreMissingValueFiles: true
+      valueFiles:
+        - values.yaml

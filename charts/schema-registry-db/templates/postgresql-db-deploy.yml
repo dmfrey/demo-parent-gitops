@@ -1,0 +1,7 @@
+---
+apiVersion: sql.tanzu.vmware.com/v1
+kind: Postgres
+metadata:
+  name: {{ include "postgres-db.name" . }}
+spec:
+  {{- toYaml .Values.spec | nindent 2 }}
