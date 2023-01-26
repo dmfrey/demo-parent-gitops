@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infrastructure-root
+  namespace: argocd
+spec:
+  source:
+    repoURL: git@github.com:dmfrey/demo-parent-gitops.git
+    targetRevision: HEAD
+    path: argocd/demo-ns-overlays/infrastructure/apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
