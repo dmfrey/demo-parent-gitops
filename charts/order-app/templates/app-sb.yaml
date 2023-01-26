@@ -2,13 +2,28 @@
 apiVersion: servicebinding.io/v1beta1
 kind: ServiceBinding
 metadata:
-  name: {{ include "spring-boot-app.fullname" . }}
+  name: {{ include "spring-boot-app.fullname" . }}-db-sb
 spec:
   # direct Secret reference is used for compatibility, but not recommended for dynamically provisioned services
   service:
     apiVersion: v1
     kind: Secret
     name: {{ .Values.serviceBinding.postgres.secretName }}
+  workload:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "spring-boot-app.fullname" . }}
+---
+apiVersion: servicebinding.io/v1beta1
+kind: ServiceBinding
+metadata:
+  name: {{ include "spring-boot-app.fullname" . }}-messaging-sb
+spec:
+  # direct Secret reference is used for compatibility, but not recommended for dynamically provisioned services
+  service:
+    apiVersion: v1
+    kind: Secret
+    name: {{ .Values.serviceBinding.rabbitmq.secretName }}
   workload:
     apiVersion: apps/v1
     kind: Deployment
