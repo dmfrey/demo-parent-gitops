@@ -23,6 +23,12 @@ spec:
       valueFiles:
         - values.yaml
       values: |
+        application:
+          spring:
+            cloud:
+              stream:
+                schema-registry-client:
+                  endpoint: http://schema-registry-demo
         serviceAccount:
           name: order-app-demo-sa
           clusterRole:
@@ -32,6 +38,8 @@ spec:
         serviceBinding:
           postgres:
             secretName: order-app-db-demo-app-user-db-secret
+          rabbitmq:
+            secretName: "demo-rabbitmq-demo-default-user"
   destination:
     server: https://kubernetes.default.svc
     namespace: demo
