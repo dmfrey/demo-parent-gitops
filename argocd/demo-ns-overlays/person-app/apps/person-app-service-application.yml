@@ -29,6 +29,8 @@ spec:
         serviceBinding:
           postgres:
             secretName: person-app-db-demo-app-user-db-secret
+          rabbitmq:
+            secretName: "demo-rabbitmq-demo-default-user"
   destination:
     server: https://kubernetes.default.svc
     namespace: demo

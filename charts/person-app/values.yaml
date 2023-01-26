@@ -134,3 +134,5 @@ application:
 serviceBinding:
   postgres:
     secretName: "person-app-db-app-user-db-secret"
+  rabbitmq:
+    secretName: "demo-rabbitmq-default-user"
