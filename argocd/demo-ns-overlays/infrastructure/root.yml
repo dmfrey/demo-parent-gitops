@@ -4,6 +4,13 @@ metadata:
   name: infrastructure-root
   namespace: argocd
 spec:
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
+  project: demo
   source:
     repoURL: git@github.com:dmfrey/demo-parent-gitops.git
     targetRevision: HEAD
