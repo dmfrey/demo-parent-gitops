@@ -124,8 +124,14 @@ springboot:
 application:
   server.port: 8080
   logging.level:
-    org.springframework.data: INFO
+    org.springframework.data: DEBUG
     org.springframework.web: INFO
+  spring:
+    jpa:
+      hibernate:
+        ddl-auto-create: true
+        ddl-auto: update
+      generate-ddl: true
   management: 
     zipkin.tracing.endpoint: http://tempo.observability:9411
 
