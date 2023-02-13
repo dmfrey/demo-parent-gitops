@@ -124,6 +124,7 @@ springboot:
 application:
   server.port: 8080
   logging.level:
+    org.springframework.cloud.stream: INFO
     org.springframework.data: INFO
     org.springframework.web: INFO
   management: 
