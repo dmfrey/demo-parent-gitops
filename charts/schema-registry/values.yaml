@@ -133,8 +133,16 @@ application:
         ddl-auto: update
       generate-ddl: true
   management: 
-    zipkin.tracing.endpoint: http://tempo.observability:9411
+    zipkin.tracing.endpoint: http://tempo-0.observability:9411
 
 serviceBinding:
   postgres:
     secretName: "schema-registry-db-app-user-db-secret"
+
+postgresql:
+  enabled: true
+
+  fullnameOverride: schema-registry-db
+
+  serviceBindings:
+    enabled: true
