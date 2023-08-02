@@ -137,7 +137,7 @@ application:
 
 serviceBinding:
   postgres:
-    secretName: "schema-registry-db-app-user-db-secret"
+    secretName: "schema-registry-db-svcbind-custom-user"
 
 #postgresql:
 #  enabled: true
