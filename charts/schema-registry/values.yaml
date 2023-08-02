@@ -133,7 +133,7 @@ application:
         ddl-auto: update
       generate-ddl: true
   management: 
-    zipkin.tracing.endpoint: http://tempo-0.observability.svc:9411
+    zipkin.tracing.endpoint: http://tempo.observability.svc:9411
 
 serviceBinding:
   postgres:
