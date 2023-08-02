@@ -139,10 +139,10 @@ serviceBinding:
   postgres:
     secretName: "schema-registry-db-app-user-db-secret"
 
-postgresql:
-  enabled: true
-
-  fullnameOverride: schema-registry-db
-
-  serviceBindings:
-    enabled: true
+#postgresql:
+#  enabled: true
+#
+#  fullnameOverride: schema-registry-db
+#
+#  serviceBindings:
+#    enabled: true
