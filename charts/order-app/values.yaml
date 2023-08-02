@@ -132,6 +132,6 @@ application:
 
 serviceBinding:
   postgres:
-    secretName: "order-app-db-app-user-db-secret"
+    secretName: "order-app-db-svcbind-custom-user"
   rabbitmq:
-    secretName: "demo-rabbitmq-default-user"
+    secretName: "demo-rabbitmq-demo-svcbind"
